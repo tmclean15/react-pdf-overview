@@ -166,6 +166,27 @@
           }
         }
       }
+    },
+    "templates": {
+      "root": "libs/templates",
+      "sourceRoot": "libs/templates/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/templates/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/templates"],
+          "options": {
+            "jestConfig": "libs/templates/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

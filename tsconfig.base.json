@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@react-pdf-overview/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@react-pdf-overview/api-interfaces": [
+        "libs/api-interfaces/src/index.ts"
+      ],
+      "@react-pdf-overview/templates": ["libs/templates/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

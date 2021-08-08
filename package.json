@@ -27,6 +27,7 @@
   },
   "private": true,
   "dependencies": {
+    "@react-pdf/renderer": "^2.0.18",
     "core-js": "^3.6.5",
     "express": "4.17.1",
     "react": "17.0.2",

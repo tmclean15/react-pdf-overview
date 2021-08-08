@@ -39,6 +39,9 @@
     "react-pdf-overview-e2e": {
       "tags": [],
       "implicitDependencies": ["react-pdf-overview"]
+    },
+    "templates": {
+      "tags": []
     }
   }
 }
