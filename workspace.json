@@ -8,16 +8,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -42,16 +38,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api"
-          ],
+          "outputs": ["coverage/apps/api"],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -67,9 +59,28 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/api-interfaces/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+          }
+        }
+      }
+    },
+    "chart-configs": {
+      "root": "libs/chart-configs",
+      "sourceRoot": "libs/chart-configs/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/chart-configs/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/chart-configs"],
+          "options": {
+            "jestConfig": "libs/chart-configs/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -81,9 +92,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/react-pdf-overview",
             "index": "apps/react-pdf-overview/src/index.html",
@@ -94,9 +103,7 @@
               "apps/react-pdf-overview/src/favicon.ico",
               "apps/react-pdf-overview/src/assets"
             ],
-            "styles": [
-              "apps/react-pdf-overview/src/styles.css"
-            ],
+            "styles": ["apps/react-pdf-overview/src/styles.css"],
             "scripts": [],
             "webpackConfig": "apps/react-pdf-overview/webpack.config.js"
           },
@@ -142,16 +149,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/react-pdf-overview/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/react-pdf-overview/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/react-pdf-overview"
-          ],
+          "outputs": ["coverage/apps/react-pdf-overview"],
           "options": {
             "jestConfig": "apps/react-pdf-overview/jest.config.js",
             "passWithNoTests": true
@@ -180,9 +183,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/react-pdf-overview-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/react-pdf-overview-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -195,16 +196,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/templates/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/templates/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/templates"
-          ],
+          "outputs": ["coverage/libs/templates"],
           "options": {
             "jestConfig": "libs/templates/jest.config.js",
             "passWithNoTests": true

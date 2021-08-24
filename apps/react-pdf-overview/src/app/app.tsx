@@ -4,7 +4,7 @@ import {
 } from "@react-pdf-overview/templates";
 import { CustomPDFViewer } from "./custom-pdf-viewer";
 import { useChartImage } from "./chart";
-import { ChartConfiguration } from "chart.js";
+import { lineChartConfig } from "@react-pdf-overview/chart-configs";
 
 const loremIpsumParagraph = `
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet mollis augue, ac viverra nisi. Nulla facilisi. Nunc at elit ac lacus bibendum interdum ac vitae risus. Phasellus sed pellentesque dolor. Sed maximus ac leo vitae euismod. Etiam eu hendrerit est. In feugiat dolor semper, varius quam vel, varius orci. In quis lectus id sem pharetra efficitur sed non nibh. Sed porttitor augue sed massa porta rhoncus. Fusce at odio sapien. Duis id dolor id felis suscipit elementum. Phasellus tristique molestie ipsum nec maximus. Vivamus ut volutpat urna, nec elementum mauris.
@@ -39,54 +39,10 @@ const tableData: DocumentTemplateProps["tableData"] = {
   ],
 };
 
-const chartConfig: ChartConfiguration = {
-  type: "line",
-  data: {
-    labels: [0.01, 0.1, 1, 10, 100, 1000],
-    datasets: [
-      {
-        data: [],
-        label: "Min",
-        borderColor: "#9db3c0",
-        fill: false,
-      },
-      {
-        data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-        label: "Data",
-        borderColor: "#010102",
-        fill: false,
-      },
-      {
-        data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-        label: "Max",
-        borderColor: "#9db3c0",
-        fill: false,
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      title: {
-        display: true,
-        text: "World population per region (in millions)",
-      },
-    },
-    scales: {
-      x: {
-        display: true,
-        type: "logarithmic",
-      },
-      y: {
-        display: true,
-      },
-    },
-  },
-};
-
 const App = () => {
   const chartImageUrl = useChartImage(
     document.getElementById("root") as HTMLDivElement,
-    chartConfig
+    lineChartConfig
   );
 
   if (!chartImageUrl) return null;
