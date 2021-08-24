@@ -1,5 +1,13 @@
-import React from 'react';
-import { View, Text } from '@react-pdf/renderer';
+import React from "react";
+import { View, Text, StyleSheet } from "@react-pdf/renderer";
+
+const styles = StyleSheet.create({
+  title: {
+    textAlign: "center",
+    marginBottom: "0.2in",
+    fontSize: 14,
+  },
+});
 
 export type TitleProps = {
   children: string;
@@ -7,7 +15,7 @@ export type TitleProps = {
 
 export const Title = ({ children }: TitleProps): JSX.Element => {
   return (
-    <View>
+    <View style={styles.title}>
       <Text>{children}</Text>
     </View>
   );
