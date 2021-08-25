@@ -39,6 +39,10 @@ const styles = StyleSheet.create({
     textDecoration: "underline",
     textDecorationStyle: "double",
   },
+  chartImage: {
+    height: "6in",
+    width: "100%",
+  },
 });
 
 export type DocumentTemplateProps = {
@@ -46,7 +50,12 @@ export type DocumentTemplateProps = {
   paragraph: string;
   src: string;
   tableData: TableProps;
-  chartImageUrl: string;
+  chartImage:
+    | string
+    | {
+        data: Buffer;
+        format: "png" | "jpg";
+      };
 };
 
 export const DocumentTemplate = ({
@@ -54,7 +63,7 @@ export const DocumentTemplate = ({
   paragraph,
   src,
   tableData,
-  chartImageUrl,
+  chartImage,
 }: DocumentTemplateProps): JSX.Element => {
   return (
     <Document>
@@ -75,7 +84,7 @@ export const DocumentTemplate = ({
         </View>
         <Divider />
         <Table {...tableData} />
-        <Image src={chartImageUrl} />
+        <Image src={chartImage} style={styles.chartImage} />
       </Page>
     </Document>
   );

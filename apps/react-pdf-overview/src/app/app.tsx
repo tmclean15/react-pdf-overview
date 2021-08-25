@@ -60,7 +60,7 @@ const App = () => {
         paragraph={loremIpsumParagraph}
         src="/assets/chart.png"
         tableData={tableData}
-        chartImageUrl={chartImageUrl}
+        chartImage={chartImageUrl}
       />
     </CustomPDFViewer>
   );
