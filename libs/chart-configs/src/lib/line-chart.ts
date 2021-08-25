@@ -3,22 +3,22 @@ import { ChartConfiguration } from "chart.js";
 export const lineChartConfig: ChartConfiguration = {
   type: "line",
   data: {
-    labels: [0.01, 0.1, 1, 10, 100, 1000],
+    labels: [0.01, 0.1, 1, 10, 100, 1000, 10000, 100000],
     datasets: [
       {
-        data: [],
+        data: [200, 300, 400, 500, 600, 700, 800, 900],
         label: "Min",
         borderColor: "#9db3c0",
         fill: false,
       },
       {
-        data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+        data: [282, 350, 411, 502, 635, 809, 820, 987],
         label: "Data",
         borderColor: "#010102",
         fill: false,
       },
       {
-        data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+        data: [300, 400, 500, 600, 700, 800, 900, 1000],
         label: "Max",
         borderColor: "#9db3c0",
         fill: false,
@@ -29,7 +29,17 @@ export const lineChartConfig: ChartConfiguration = {
     plugins: {
       title: {
         display: true,
-        text: "World population per region (in millions)",
+        text: "A neat chart",
+        font: {
+          size: 30,
+        },
+      },
+      legend: {
+        labels: {
+          font: {
+            size: 20,
+          },
+        },
       },
     },
     scales: {
